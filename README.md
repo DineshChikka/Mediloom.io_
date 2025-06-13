@@ -6,7 +6,7 @@ Create and configure all required .env files in the respective folders.
 
 Install Dependencies:
 
-Run npm i in the following directories to install necessary packages:
+Run "npm i" in the following directories to install necessary packages:
 
 tailwindcss4
 
@@ -18,9 +18,9 @@ blockchain
 
 Kafka Setup:
 
-Use Aiven.io to create a Kafka service.
+Use "Aiven.io" to create a Kafka service.
 
-Update the Kafka topics and credentials in the respective Python programs (both producer and consumer).
+Update the Kafka topics and credentials in the respective Python programs (both producer and consumer) also the DB credientials.
 
 For the generation engine, make sure to start the consumer before the producer.
 
