@@ -1,0 +1,92 @@
+{
+  "address": "0x0Bd2Df275bA5c6d7acB58EC839f9C8114a87bb41",
+  "abi": [
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "FileStored",
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "fileHash",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "uploader",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "files",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "address",
+          "name": "uploader"
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "storeFileHash",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "fileHash"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "verifyFile",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "fileHash"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bool",
+          "name": ""
+        },
+        {
+          "type": "address",
+          "name": ""
+        },
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "deployedAt": "2025-04-25T05:39:52.852Z",
+  "network": "localhost"
+}

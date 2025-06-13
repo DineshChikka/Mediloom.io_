@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+    <div class="middle cardholder">
+        <div class="cardmargin details2">
+            <h1 class="form-heading">Login</h1>
+            <% if (message) { %>
+                <div class="alert alert-warning"><%= message %></div>
+            <% } %>
+            <form action="/loginUser" method="POST">
+                <div class="mb-3">
+                  <label for="Email">Email</label>
+                  <input type="email" class="form-control" id="Email" name= "email" placeholder="Use your respective ID" />
+                  <p id="EmailErrMsg" class="error-message"></p>
+              </div>
+                <div class="mb-3">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="Password" name="password"/>
+                    <p id="PasswordErrMsg" class="error-message"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="Role">Select Your Role</label>
+                    <select class="form-control" id="Role" name="role" onchange="toggleHospitalIDField()">
+                        <option value="Civilian">Civilian</option>
+                        <option value="Doctor/Medical Professional">Doctor/Medical Professional</option>
+                        <option value="Hospital Admin">Hospital Admin</option>
+                        <option value="Policymaker">Policymaker</option>
+                    </select>
+                    <p id="RoleErrMsg" class="error-message"></p>
+                </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <button type="submit" class="btn btn-primary btnspace">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between cardmargin ">
+        <div class="details2">
+            <h1 class="heading3">Subscribe to updates</h1>
+            <p class="para3">Stay informed with the latest news and updates.</p>
+        </div>
+        <div class="details2">
+            <div class="d-flex flex-row">
+                <input type="text" placeholder="Type your email" class="form-control">
+                <button class="btn btn-primary emailbox">join</button>
+            </div>
+            <p class="para3">By Subscribing, you accept our private policy.</p>
+        </div>
+    </div>
+<%- include('partials/footer') %>

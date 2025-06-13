@@ -1,0 +1,89 @@
+<%- include('partials/header') %>
+    <div class="middle cardholder">
+        <div class="cardmargin details2">
+            <h1 class="form-heading">Sign Up</h1>
+            <% if (message) { %>
+                <div class="alert alert-warning"><%= message %></div>
+            <% } %>
+            <form action="/registerUser" method="POST">
+                <div class="mb-3">
+                    <label for="Firstname">First Name</label>
+                    <input type="text" class="form-control" id="Firstname" name= "firstname" placeholder="Your legal First Name" />
+                    <p id="FirstnameErrMsg" class="error-message"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="Lastname">Last Name</label>
+                    <input type="text" class="form-control" id="Lastname" name= "lastname" placeholder="Your legal Last Name" />
+                    <p id="UsernameErrMsg" class="error-message"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="Phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="Phone" name="phone" placeholder="Include country code" pattern="[0-9]{12}" />
+                    <p id="PhoneErrMsg" class="error-message"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="Aadhar">Aadhar Number</label>
+                    <input type="text" class="form-control" id="Aadhar" name="aadhar" placeholder="Enter your Aadhar number" pattern="[0-9]{12}" />
+                    <p id="AadharErrMsg" class="error-message"></p>
+                </div>
+                <div class="mb-3">
+                  <label for="Email">Email</label>
+                  <input type="email" class="form-control" id="Email" name= "email" placeholder="Work email address" />
+                  <p id="EmailErrMsg" class="error-message"></p>
+              </div>
+                <div class="mb-3">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="Password" name="password"/>
+                    <p id="PasswordErrMsg" class="error-message"></p>
+                </div>
+                <div class="mb-3">
+                    <label for="Role">Select Your Role</label>
+                    <select class="form-control" id="Role" name="role" onchange="toggleHospitalIDField()">
+                        <option value="Civilian">Civilian</option>
+                        <option value="Doctor/Medical Professional">Doctor/Medical Professional</option>
+                        <option value="Hospital Admin">Hospital Admin</option>
+                        <option value="Policymaker">Policymaker</option>
+                    </select>
+                    <p id="RoleErrMsg" class="error-message"></p>
+                </div>
+                <!-- Hospital ID Field (Initially Hidden) -->
+            <div class="mb-3" id="HospitalIDField" style="display: none;">
+                <label for="HospitalID">Hospital ID</label>
+                <input type="text" class="form-control" id="HospitalID" name="hospitalID" placeholder="Enter your Hospital ID" />
+                <p id="HospitalIDErrMsg" class="error-message"></p>
+            </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <button type="submit" class="btn btn-primary btnspace">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between cardmargin ">
+        <div class="details2">
+            <h1 class="heading3">Subscribe to updates</h1>
+            <p class="para3">Stay informed with the latest news and updates.</p>
+        </div>
+        <div class="details2">
+            <div class="d-flex flex-row">
+                <input type="text" placeholder="Type your email" class="form-control">
+                <button class="btn btn-primary emailbox">join</button>
+            </div>
+            <p class="para3">By Subscribing, you accept our private policy.</p>
+        </div>
+    </div>
+<%- include('partials/footer') %>
+
+<script>
+    // JavaScript to toggle the Hospital ID field
+    function toggleHospitalIDField() {
+        const roleDropdown = document.getElementById('Role');
+        const hospitalIDField = document.getElementById('HospitalIDField');
+
+        // Show the Hospital ID field if the selected role is "Doctor/Medical Professional" or "Hospital Admin"
+        if (roleDropdown.value === 'Doctor/Medical Professional' || roleDropdown.value === 'Hospital Admin') {
+            hospitalIDField.style.display = 'block';
+        } else {
+            hospitalIDField.style.display = 'none';
+        }
+    }
+</script>
